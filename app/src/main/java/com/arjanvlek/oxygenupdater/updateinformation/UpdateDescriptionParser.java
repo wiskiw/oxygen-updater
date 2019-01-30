@@ -4,6 +4,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
+import android.text.style.URLSpan;
 
 import com.arjanvlek.oxygenupdater.internal.logger.Logger;
 import com.arjanvlek.oxygenupdater.versionformatter.FormattableUpdateData;
@@ -178,7 +179,7 @@ public class UpdateDescriptionParser {
                         break;
                     case LINK:
                         // A link should be made clickable and must be displayed as a hyperlink.
-                        result.setSpan(new FormattedURLSpan(links.get(currentLine)), startPosition, endPosition, 0);
+                        result.setSpan(new URLSpan(links.get(currentLine)), startPosition, endPosition, 0);
                         break;
                 }
             }
